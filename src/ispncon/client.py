@@ -387,7 +387,7 @@ class MemcachedCacheClient(CacheClient):
     super(MemcachedCacheClient, self).__init__(config["host"], config["port"], config["cache"])
     self.config = config
     if self.cache_name != None and self.cache_name != "":
-      print "WARNING: memcached client doesn't support named caches. cache_name config value will be ignored and default cache will be used instead."
+      print "WARNING: memcached client doesn't support named caches. cache_name config value will be ignored and the cache name configured on the server will be used instead."
     self.memcached_client = Client([self.host + ':' + self.port], debug=0)
     return
   
